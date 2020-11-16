@@ -1,5 +1,5 @@
 INSERT INTO exchange_traded_fund
-	(company_symbol, company_name, trading_start_date, trading_end_date)
+	(short_name, long_name , fund_open_date, fund_close_date)
 VALUES
 	('USO', 'United States Oil', '2006-04-10', '2017-11-10'),
 	('ITB', 'iShares US Home Construction','2006-05-05', '2017-11-10'),
@@ -9,3 +9,6 @@ VALUES
 	('SPY', 'SPDR S&P 500', '2005-02-25', '2017-11-10'),
 	('VEA', 'Vanguard FTSE Developed Markets', '2007-07-26', '2017-11-10'),
 	('DXJ', 'WisdomTree Japan Hedged Equity', '2006-06-16', '2017-11-10');
+
+
+select * from exchange_traded_fund etf;

@@ -1,5 +1,5 @@
 INSERT INTO share_price (
-    company_symbol,
+    etf_fk,
     share_date, 
 	price_open ,
 	price_high,

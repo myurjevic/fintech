@@ -3,7 +3,6 @@ package com.yurjevic.fintech.data.entity
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.annotation.JsonIgnore
 import java.time.LocalDate
-import java.util.*
 import javax.persistence.*
 
 @Entity
@@ -12,22 +11,19 @@ data class ExchangeTradedFundEntity(
 		@Id
 		@JsonIgnore
 		@Column(name = "id", nullable = false)
-		var uuid: UUID = UUID.randomUUID(),
+		var id: Long = 0,
 
-		@Column(name = "company_id", nullable = false)
-		var companyId: Long = 0,
+		@Column(name = "short_name", nullable = false)
+		var shortName: String = "",
 
-		@Column(name = "company_symbol", nullable = false)
-		var companySymbol: String = "",
+		@Column(name = "long_name", nullable = false)
+		var longName: String = "",
 
-		@Column(name = "company_name", nullable = false)
-		var companyName: String = "",
-
-		@Column(name = "trading_start_date", nullable = false, columnDefinition = "DATE")
+		@Column(name = "fund_open_date", nullable = false, columnDefinition = "DATE")
 		@JsonFormat(pattern = "yyyy-MM-dd")
-		var tradingStartDate: LocalDate = LocalDate.now(),
+		var fundOpenDate: LocalDate = LocalDate.now(),
 
-		@Column(name = "trading_end_date", nullable = true, columnDefinition = "DATE")
+		@Column(name = "fund_close_date", nullable = true, columnDefinition = "DATE")
 		@JsonFormat(pattern = "yyyy-MM-dd")
-		var tradingEndDate: LocalDate = LocalDate.now()
+		var fundCloseDate: LocalDate = LocalDate.now()
 )
